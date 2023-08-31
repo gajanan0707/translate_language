@@ -59,7 +59,7 @@ To get the translation, we can Postman or any web browser and hit this API as fo
 ```http
  # URL: (http://localhost:5000) or Deployed link
 
- POST {URL}/translate?to=''
+ POST {URL}/translate?targetLanguage=''
 ```
 
 We have to pass one `Query Params` `targetLanguage`
