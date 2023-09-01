@@ -46,7 +46,7 @@ npm start
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your config/config.env file
 
 `SUBSCRIPTION_KEY`
 
