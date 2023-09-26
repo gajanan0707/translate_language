@@ -90,6 +90,7 @@ We have to pass `body` with list of text's
 ## Screenshots
 
 ![App Screenshot](https://i.imgur.com/46GxwKG.png)
+![Token Screenshot](token-image.png)
 
 ## Badges
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
