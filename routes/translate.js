@@ -10,6 +10,23 @@ redisClient.on("connect", function (err) {
     console.log("Redis Connected");
 });
 
+const expectedApiKey = process.env.SECRET_API_KEY;
+
+function authenticateApiKey(req, res, next) {
+    const apiKey = req.headers["x-api-key"] || req.query.apiKey;
+
+    if (!apiKey || apiKey !== expectedApiKey) {
+        return res.status(401).json({
+            success: false,
+            message: "Authentication failed. Invalid API key.",
+        });
+    }
+    // If the API key is valid, continue to the next middleware or route handler.
+    next();
+}
+
+router.use(authenticateApiKey);
+
 router.get('/', async (req, res, next) => {
     res.status(200).json({
         success: true,
