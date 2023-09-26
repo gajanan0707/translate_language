@@ -52,6 +52,7 @@ To run this project, you will need to add the following environment variables to
 
 `OCP_APIM_SUBSCRIPTION_REGION`
 
+`SECRET_API_KEY`
 
 ## API Reference
 To get the translation, we can Postman or any web browser and hit this API as follow:
