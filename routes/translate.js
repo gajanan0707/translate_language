@@ -34,6 +34,7 @@ router.get('/', async (req, res, next) => {
     });
 });
 
+
 router.post("/translate", async (req, res, next) => {
     try {
         let queryParameter = req.query;
@@ -106,9 +107,15 @@ router.post("/translate", async (req, res, next) => {
                     })
             }
 
+            const cachedData = JSON.parse(getCacheData) || [];
+            const mainTextsFromCache = cachedData.map((item) => item.main_text);
+            const response_data = data
+                .filter((element) => mainTextsFromCache.includes(element))
+                .map((element) => cachedData[mainTextsFromCache.indexOf(element)]);
+
             res.status(200).json({
                 success: true,
-                data: JSON.parse(getCacheData),
+                data: response_data,
             });
         }
     } catch (error) {
